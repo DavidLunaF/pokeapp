@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { PokedexService } from "./pokedex.service";
 import { PokemonComponent } from "./pokemon/pokemon.component";
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { Pokemon } from './shared/pokemon.model';
+import { SwiperConfig } from 'ngx-swiper-wrapper';
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -9,30 +11,16 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 })
 export class AppComponent {
   title: string = "pokeapp";
-  products;
+  pokemon: Pokemon;
   id: number;
+  config: any = {
+    centeredSlides: true
+  }
 
   constructor(
-    public dialog: MatDialog,
-    private pokedexService: PokedexService
-  ) {}
+    private pokedexService: PokedexService) {}
 
   ngOnInit() {
-    this.products = [];
-    this.pokedexService.getPokemons().subscribe(poke => {
-      poke.results.forEach(element => {
-        this.products.push(element);
-      });
-    });
-  }
-  showInfo(id: number) {
-    const dialogRef = this.dialog.open(PokemonComponent, {
-      width: "250px",
-      data: { id: id }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed");
-      this.id = result;
-    });
+   this.id=1;
   }
 }

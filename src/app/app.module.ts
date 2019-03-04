@@ -16,6 +16,7 @@ import {
   MatButtonModule,
   MatDialogModule
 } from "@angular/material";
+import {MatIconModule} from '@angular/material/icon';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: "horizontal",
@@ -35,7 +36,8 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     MatButtonModule,
     MatListModule,
     MatBottomSheetModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   ],
   entryComponents: [PokemonComponent],
   providers: [

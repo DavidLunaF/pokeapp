@@ -22,7 +22,7 @@ export class PokedexService {
   constructor(private http: HttpClient) {}
 
   getPokemon(id): Observable<any> {
-    return this.http.get(this.endpointOne + id).pipe(map(this.extractData));
+    return this.http.get(this.endpointOne + id + "/").pipe(map(this.extractData));
   }
 
   getPokemons(): Observable<any> {

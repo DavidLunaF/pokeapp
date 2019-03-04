@@ -1,23 +1,17 @@
 <div class="animated slideInLeft" id="square">
   <div class="animated slideInRight" id="topSquare">
     <div class="animated slideInLeft" id="screen">
-      <!-- <ul class="heroes">
-        <li *ngFor="let pokemon of products">
-          {{pokemon.name}}
-        </li>
-      </ul> -->
-      <swiper [config]="config" [(index)]="index">
-        <div id="poke-slide" class="swiper-slide" *ngFor="let pokemon of products">
-          <button mat-raised-button (click)="showInfo(1)">{{pokemon.name}}</button>
-        </div>
-
+      <swiper [config]="config">
+        <app-pokemon [(id)]=id></app-pokemon>
       </swiper>
-      <h3 class="animated slideInRight" id="gameboy">Gameboy</h3>
-      <h3 class="animated slideInRight" id="color"><span id="C">C</span><span id="O">o</span><span id="L">l</span><span
-          id="O-2">o</span><span id="R">r</span></h3>
-      <div id="power"></div>
     </div>
-
+      <h3 class="animated slideInRight" id="gameboy">Gameboy</h3>
+      <h3 class="animated slideInRight" id="color">
+        <span id="C">C</span><span id="O">o</span><span id="L">l</span>
+        <span id="O-2">o</span><span id="R">r</span>
+      </h3>
+      <div id="power"></div>
   </div>
+</div>
 
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
